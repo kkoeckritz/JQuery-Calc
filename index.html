@@ -78,17 +78,18 @@
             var first_num = 0;
             var second_num = 0;
 			var num_operator = "@";
+			var answer = 0;
 
             var op_clicked = false;
             var e1_clicked = false;
 
             $(".number").on("click", function() {
-                while (op_clicked == false) {
+                if (op_clicked == false) {
                     key_pressed = this.value;
                     first_num += ("" + key_pressed);
                     console.log(first_num);
                 }
-                while (op_clicked == false) {
+                else if (op_clicked == true) {
                     key_pressed = this.value;
                     second_num += ("" + key_pressed);
                     console.log(second_num);
@@ -96,11 +97,27 @@
 			})
 
             $(".operator").on("click", function() {
+				num_operator = this.value;
                 op_clicked = true;
 			})
 
             $(".equal").on("click", function() {
-                
+                if (num_operator == "plus") {
+					answer = Number(first_num) + Number(second_num);
+				}
+				else if (num_operator == "minus") {
+					answer = first_num - second_num;
+				}
+				else if (num_operator == "times") {
+					answer = first_num * second_num;
+				}
+				else if (num_operator == "divide") {
+					answer = first_num / second_num;
+				}
+				else if (num_operator == "power") {
+					answer = first_num ^ second_num;
+				}
+				console.log(answer);
 			})
 
             $(".clear").on("click", function() {
