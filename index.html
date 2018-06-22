@@ -77,13 +77,17 @@
             var key_pressed = "@";
             var first_num = 0;
             var second_num = 0;
-            var num_operator = "@";
-            
-            s
-
+			var num_operator = "@";
+			
             $(".btn").on("click", function() {
                 key_pressed = this.value;
-            })
+			})
+			
+			//while key pressed is not an operator, 
+			while (key_pressed !== "plus" || key_pressed !== "minus" || key_pressed !== "times" || 
+				key_pressed !== "divide" || key_pressed !== "power" || key_pressed !== "equals") {
+					
+			};
 
             
 
