@@ -78,18 +78,44 @@
             var first_num = 0;
             var second_num = 0;
 			var num_operator = "@";
-			
-            $(".btn").on("click", function() {
-                key_pressed = this.value;
+
+            var op_clicked = false;
+            var e1_clicked = false;
+
+            $(".number").on("click", function() {
+                while (op_clicked == false) {
+                    key_pressed = this.value;
+                    first_num += ("" + key_pressed);
+                    console.log(first_num);
+                }
+                while (op_clicked == false) {
+                    key_pressed = this.value;
+                    second_num += ("" + key_pressed);
+                    console.log(second_num);
+                }
+			})
+
+            $(".operator").on("click", function() {
+                op_clicked = true;
+			})
+
+            $(".equal").on("click", function() {
+                
+			})
+
+            $(".clear").on("click", function() {
+                
 			})
 			
-			//while key pressed is not an operator, 
-			while (key_pressed !== "plus" || key_pressed !== "minus" || key_pressed !== "times" || 
-				key_pressed !== "divide" || key_pressed !== "power" || key_pressed !== "equals") {
-					
-			};
 
-            
+
+			// //while key pressed is not an operator, 
+			// while (key_pressed !== "plus" || key_pressed !== "minus" || key_pressed !== "times" || 
+			// 	key_pressed !== "divide" || key_pressed !== "power" || key_pressed !== "equals") {
+					
+			// };
+
+
 
 	    });
 
