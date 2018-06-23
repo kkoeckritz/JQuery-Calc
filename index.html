@@ -117,6 +117,11 @@
 				else if (num_operator == "power") {
 					answer = first_num ^ second_num;
 				}
+
+				// print answer to screen
+				document.getElementById("result").innerHTML = "";
+				document.getElementById("result").append(answer);
+				
 				console.log(answer);
 			})
 
